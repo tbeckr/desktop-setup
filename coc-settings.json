@@ -1,0 +1,24 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python",
+        "javscript",
+        "typescript",
+        "json"
+    ],
+    "diagnostic.errorSign": "\uf06a",
+    "python.jediEnabled": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Args": [
+        "max-line-length = 88"
+    ],
+    "python.venvFolders": [
+        "C:\\Python-envs"
+    ],
+    "tsserver.npm": "C:\\Program Files\\nodejs\\npm",
+    "markdownlint.config": {
+        "line_length": false
+    },
+    "suggest.enablePreview": true,
+    "suggest.autoTrigger": "always",
+    "coc.preferences.formatOnType": true
+}
