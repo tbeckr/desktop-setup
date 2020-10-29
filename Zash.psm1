@@ -16,9 +16,9 @@ function Write-Theme {
     $prompt+= Write-Prompt  -Object ('@'+$user) -ForegroundColor $sl.Colors.WithForegroundColor 
     #check the last command state and indicate if failed and change the colors of the arrows
     If ($lastCommandFailed) {
-        $prompt += Write-Prompt -Object (' '+$sl.PromptSymbols.PromptIndicator+'  ')  -ForegroundColor  $sl.Colors.WithForegroundColor   
+        $prompt += Write-Prompt -Object ('::')  -ForegroundColor  $sl.Colors.WithForegroundColor   
     }else{
-        $prompt += Write-Prompt -Object (' '+$sl.PromptSymbols.PromptIndicator+'  ') -ForegroundColor  $sl.Colors.PromptSymbolColor  
+        $prompt += Write-Prompt -Object ('::') -ForegroundColor  $sl.Colors.PromptSymbolColor  
     }
     
 
@@ -32,7 +32,7 @@ function Write-Theme {
 
     $status = Get-VCSStatus
     if ($status) {
-        $prompt += Write-Prompt -Object " $($sl.PromptSymbols.GitIndicator) " -ForegroundColor $sl.Colors.PromptHighlightColor
+        $prompt += Write-Prompt -Object " $($sl.PromptSymbols.GitIndicator) " -ForegroundColor $sl.Colors.GitDefaultColor
         $prompt += Write-Prompt -Object "$($status.Branch)" -ForegroundColor $sl.Colors.GitDefaultColor
         if ($status.Working.Length -gt 0) {
             $prompt += Write-Prompt -Object (" " + $sl.PromptSymbols.GitDirtyIndicator) -ForegroundColor $sl.Colors.PromptSymbolColor
@@ -58,5 +58,5 @@ $sl.PromptSymbols.GitDirtyIndicator =[char]::ConvertFromUtf32(10007)
 $sl.Colors.PromptSymbolColor = [ConsoleColor]::Green
 $sl.Colors.PromptHighlightColor = [ConsoleColor]::Blue
 $sl.Colors.DriveForegroundColor = [ConsoleColor]::Cyan
-$sl.Colors.WithForegroundColor = [ConsoleColor]::Yellow
+$sl.Colors.WithForegroundColor = [ConsoleColor]::Grey
 $sl.Colors.GitDefaultColor = [ConsoleColor]::Yellow
